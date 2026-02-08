@@ -1,0 +1,50 @@
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center; 
+  gap: 0;
+}
+
+
+.sudoku-box {
+  display: grid;
+  grid-template-columns: repeat(3, 4em);
+  grid-template-rows: repeat(3, 4em);
+  border-right: 0.2em solid black;
+  border-bottom: 0.2em solid black;
+}
+
+/* Remove right border on every 3rd box */
+.sudoku-box:nth-child(3n) {
+  border-right: none;
+}
+
+/* Remove bottom border on last row of boxes */
+.sudoku-box:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+/* Individual cells */
+.sudoku-cell {
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Highlight given numbers */
+.sudoku-cell.given {
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+
+
+.create-board-button{
+  outline: orangered;
+
+}
