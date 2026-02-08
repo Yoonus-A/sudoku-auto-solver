@@ -20,25 +20,18 @@ app.add_middleware(
     allow_headers=["*"],
 ) 
 
+
 class SudokuResponse(BaseModel):
     board: list[int]  # 9x9 board of ints
 
-@app.get("/ping")
-def ping():
-    return {"status": "o2k"}
-
-@app.get("/puzzle", response_model=SudokuResponse)
-def get_game():
-    # Dummy 9x9 board
-    dummy_board = [7] * 81
-    return {"board": dummy_board}
 
 
 
-@app.get("/puzzle2") # select a puzzle
+
+@app.get("/puzzle") # select a puzzle
 def get_game():
     # Load the dataset
-    df = pd.read_csv('backend/sudoku.csv')
+    df = pd.read_csv('backend/sudoku-games.csv')
 
     # Select a random row from the dataset
     random_row = df.sample(n=1).iloc[0]
@@ -49,8 +42,8 @@ def get_game():
     # Convert the string representation of the list to an actual list of integers
     quizzes_list = [int(x) for x in str(quizzes)]
 
-    board=[quizzes_list[i:i+9] for i in range(0, 81, 9)]
-    return {"board": board}
+    
+    return {"board": quizzes_list}
 
 
 
