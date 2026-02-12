@@ -1,4 +1,12 @@
 
+#title{
+  text-align: center;
+  color: rgb(21, 120, 186);
+  margin: auto;
+  font-family: 'Lucida Sans';
+  font-size: 3em;
+
+}
 .sudoku-grid {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -31,20 +39,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
-  user-select: none;
+  font-size: 2em;
   cursor: pointer;
   box-sizing: border-box;
+  font-family:'Gill Sans MT'
 }
 
 /* Highlight given numbers */
 .sudoku-cell.given {
   font-weight: bold;
-  background-color: #f4f4f4;
+  background-color: #ccccccf7;
 }
 
 
 .create-board-button{
-  outline: orangered;
+  font-size: 1.7em;
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: rgb(66, 136, 182); 
+  color: white;
+  font-family: 'Gill Sans MT';
+  margin-top: 4em;
+  border-width: 0.2em;
+  transition: backgound-color 0.5s;
+}
 
+
+.create-board-button:hover{
+  background-color: rgb(121, 185, 227);
+  border-color: crimson;
+  cursor: pointer;
 }

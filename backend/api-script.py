@@ -26,8 +26,6 @@ class SudokuResponse(BaseModel):
 
 
 
-
-
 @app.get("/puzzle") # select a puzzle
 def get_game():
     # Load the dataset
